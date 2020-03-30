@@ -1,0 +1,38 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:58837",
+      "sslPort": 44325
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "IISExpress",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "RecomendationService": "http://localhost:5007/",
+        "CurrencyService": "http://localhost:5004/",
+        "ProductCatalogService": "http://localhost:5001/",
+        "ShippingService": "http://localhost:5003/",
+        "CheckoutService": "http://localhost:5008/",
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "CartService": "http://localhost:5000/"
+      }
+    },
+    "EcommerseClient": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:5001;http://localhost:5000"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchBrowser": true,
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}"
+    }
+  }
+}
