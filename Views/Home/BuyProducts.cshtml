@@ -17,16 +17,7 @@
             <div class="col-12 col-lg-7">
                 <h2 id="titulo">@Model.name</h2>
                 <p class="text-muted">
-                    @{ 
-                        double precio = CurrencyService.Conversion(new CurrencyChange()
-                        {
-                            CurrencyCode = Model.priceUsd.currencyCode,
-                            Units = Model.priceUsd.units,
-                            Nano = Model.priceUsd.nanos,
-                            CurrencyType = CurrencyService.cur
-                        });
-                    }
-                    @CurrencyService.cur @precio
+                    @Model.priceUsd.currencyCode @string.Format("{0:C}", Model.price)
                 </p>
                 <hr />
                 <p>

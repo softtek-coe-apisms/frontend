@@ -11,25 +11,45 @@ namespace EcommerseClient.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index(string currency = "")
+        public IActionResult Index(string currency = "USD")
         {
             GenerateCookie();
-            var resultadoFinal = ProductCatalogService.Catalog();
-            if (currency == "" && CurrencyService.cur == "")
+            ProductCatalog resultadoFinal = ProductCatalogService.Catalog();
+            UpdateCurrency(currency);
+
+            foreach (var item in resultadoFinal.products)
             {
-                CurrencyService.cur = "USD";
+                double precio = CurrencyService.Conversion(new CurrencyChange()
+                {
+                    CurrencyCode = item.priceUsd.currencyCode,
+                    Units = item.priceUsd.units,
+                    Nano = item.priceUsd.nanos,
+                    CurrencyType = currency
+                });
+                item.price = precio;
             }
-            if(currency != "")
-            {
-                CurrencyService.cur = currency;
-            }
+            resultadoFinal.currentCurrency = currency;
             return View(resultadoFinal);
         }
 
         [HttpGet]
-        public IActionResult SearchByName(string name)
+        public IActionResult SearchByName(string name, string currency)
         {
             var Found = ProductCatalogService.CatalogByName(name);
+
+            foreach (var item in Found.products)
+            {
+                double precio = CurrencyService.Conversion(new CurrencyChange()
+                {
+                    CurrencyCode = item.priceUsd.currencyCode,
+                    Units = item.priceUsd.units,
+                    Nano = item.priceUsd.nanos,
+                    CurrencyType = currency
+                });
+                item.price = precio;
+            }
+            Found.currentCurrency = currency;
+
             return PartialView("Index", Found);
         }
 
@@ -42,15 +62,32 @@ namespace EcommerseClient.Controllers
             }
         }
 
+        public void UpdateCurrency(string cur)
+        {
+            if (HttpContext.Request.Cookies["currency"] == null)
+            {
+                HttpContext.Response.Cookies.Append("currency", cur);
+            }
+            else
+            {
+                HttpContext.Response.Cookies.Delete("currency");
+                HttpContext.Response.Cookies.Append("currency", cur);
+            }
+        }
+
         [HttpGet]
-        public IActionResult BuyProducts(string id, string currency)
+        public IActionResult BuyProducts(string id, string currency = "USD")
         {
             Producto Theproduct = ProductCatalogService.Info(id);
-            if (currency == "")
+            UpdateCurrency(currency);
+            Theproduct.price = CurrencyService.Conversion(new CurrencyChange()
             {
-                currency = "USD";
-            }
-            CurrencyService.cur = currency;
+                CurrencyCode = Theproduct.priceUsd.currencyCode,
+                Units = Theproduct.priceUsd.units,
+                Nano = Theproduct.priceUsd.nanos,
+                CurrencyType = currency
+            });
+            Theproduct.priceUsd.currencyCode = currency;
             return PartialView(Theproduct);
         }
 
@@ -58,8 +95,9 @@ namespace EcommerseClient.Controllers
         public IActionResult CheckOut(UserInfo userinfo)
         {
             userinfo.UserId = HttpContext.Request.Cookies["UserId"];
-            userinfo.CurrencyExchange = CurrencyService.cur;
+            userinfo.CurrencyExchange = HttpContext.Request.Cookies["currency"];
             CheckoutModel checkoutModel = CheckoutService.Checkout(userinfo);
+            ViewBag.currency = HttpContext.Request.Cookies["currency"];
             return View(checkoutModel);
         }
 

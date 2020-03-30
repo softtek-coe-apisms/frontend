@@ -18,22 +18,14 @@
             </p>
             <p>
                 <br>
-                Total Paid: <strong>@CurrencyService.cur @Model.TotalToPay</strong>
+                Total Paid: <strong>@ViewBag.currency @string.Format("{0:C}", Model.TotalToPay)</strong>
             </p>
-            <a class="btn btn-primary" href="/Home" role="button">Browse other products &rarr; </a>
+            <a class="btn btn-primary" href="#" onclick="GoHome()" role="button">Browse other products &rarr; </a>
         </div>
     </div>
     <hr />
 
     @{
-        //List<Producto> recomended = new List<Producto>();
-        //Cart car = CartService.GetCart(Context.Request.Cookies["UserId"]);
-        //foreach (var item in car.items)
-        //{
-        //    recomended.AddRange(RecomendationService.Recomended(item.idProduct));
-        //}
-        //await Html.RenderPartialAsync("Recomendation", recomended);
-
         CartService.DeleteCart(Context.Request.Cookies["UserId"]);
     }
 </div>

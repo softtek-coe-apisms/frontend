@@ -16,6 +16,7 @@
         "CurrencyService": "http://localhost:5004/",
         "ProductCatalogService": "http://localhost:5001/",
         "ShippingService": "http://localhost:5003/",
+        "AdService": "http://localhost:5005/",
         "CheckoutService": "http://localhost:5008/",
         "ASPNETCORE_ENVIRONMENT": "Development",
         "CartService": "http://localhost:5000/"

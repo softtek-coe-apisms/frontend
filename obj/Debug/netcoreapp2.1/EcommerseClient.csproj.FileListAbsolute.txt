@@ -72,3 +72,4 @@ C:\Users\Curso\Desktop\EcommerseClient\obj\Debug\netcoreapp2.1\EcommerseClient.V
 C:\Users\Curso\Desktop\EcommerseClient\obj\Debug\netcoreapp2.1\EcommerseClient.dll
 C:\Users\Curso\Desktop\EcommerseClient\obj\Debug\netcoreapp2.1\EcommerseClient.pdb
 C:\Users\Curso\Desktop\EcommerseClient\obj\Debug\netcoreapp2.1\EcommerseClient.csproj.CopyComplete
+C:\Users\Curso\Desktop\EcommerseClient\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Ad.g.cshtml.cs

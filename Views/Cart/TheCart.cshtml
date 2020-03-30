@@ -11,7 +11,7 @@
             {
                 <h3>Your shopping cart is empty!</h3>
                 <p>Items you add to your shopping cart will appear here.</p>
-                <a class="btn btn-primary" href="/Home" role="button">Browse Products &rarr; </a>
+                <a class="btn btn-primary" href="#" onclick="GoHome()" role="button">Browse Products &rarr; </a>
             }
             else
             {
@@ -23,7 +23,7 @@
                     </div>
                     <div class="col text-right">
                         <button class="btn btn-secondary" onclick="DeleteCart()">Empty cart</button>
-                        <a class="btn btn-info" href="/Home" role="button">Browse more products &rarr; </a>
+                        <a class="btn btn-info" href="#" onclick="GoHome()" role="button">Browse more products &rarr; </a>
                     </div>
                 </div>
                 <hr>
@@ -44,7 +44,7 @@
                             <small class="text-muted">@item.idProduct</small>
                         </div>
                         @{
-                            string cur = CurrencyService.cur;
+                            string cur = ViewBag.currency;
                             double precio = CurrencyService.Conversion(new CurrencyChange()
                             {
                                 CurrencyCode = producto.priceUsd.currencyCode,
@@ -57,7 +57,7 @@
                         <div class="col text-left">
                             Quantity: @item.quantity <br />
                             <strong>
-                                @cur @precio
+                                @cur @string.Format("{0:C}", precio)
                             </strong>
                         </div>
                     </div>
@@ -70,10 +70,10 @@
                         <p class="text-muted my-0">
                             Shipping Cost:
                             <strong id="shippingCost">
-                                @CurrencyService.cur @s
+                                @ViewBag.currency @string.Format("{0:C}", s)
                             </strong>
                         </p>
-                        Total Cost: <strong id="eltotal">@CurrencyService.cur @total</strong>
+                        Total Cost: <strong id="eltotal">@ViewBag.currency @string.Format("{0:C}", total)</strong>
                     </div>
                 </div>
 
@@ -179,6 +179,8 @@
                     }
 
                     await Html.RenderPartialAsync("Recomendation", recomended);
+                <hr />
+                    await Html.RenderPartialAsync("Ad");
                 }
             }
 

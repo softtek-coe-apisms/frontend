@@ -13,6 +13,7 @@ namespace EcommerseClient.Controllers
         public IActionResult Index()
         {
             Cart cart = CartService.GetCart(HttpContext.Request.Cookies["UserId"]);
+            ViewBag.currency = HttpContext.Request.Cookies["currency"];
             return View("TheCart", cart);
         }
 
@@ -26,7 +27,6 @@ namespace EcommerseClient.Controllers
                 idProduct = info.idProduct,
                 quantity = info.quantity
             });
-            CurrencyService.cur = info.currency;
             return Ok();
         }
 

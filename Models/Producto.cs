@@ -13,5 +13,6 @@ namespace EcommerseClient.Models
         public string picture { get; set; }
         public PriceUsd priceUsd { get; set; }
         public List<string> categories { get; set; }
+        public double price { get; set; }
     }
 }

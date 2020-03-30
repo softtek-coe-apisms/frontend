@@ -6,7 +6,6 @@ namespace EcommerseClient.Services
     public class CurrencyService
     {
         public static string BaseUrl = Environment.GetEnvironmentVariable("CurrencyService");
-        public static string cur = "";
         public static int vista = 1;
         public static double Conversion(CurrencyChange input)
         {
