@@ -8,9 +8,9 @@ namespace EcommerseClient.Models
     public class UserInfo
     {
         public string UserId { get; set; }
-        public string Credit_number_Card { get; set; }
-        public string Credit_Card_Month { get; set; }
-        public string Credit_Card_Year { get; set; }
+        public string Credit_Card_Number { get; set; }
+        public string Credit_Card_Expiration_Month { get; set; }
+        public string Credit_Card_Expiration_Year { get; set; }
         public int CVV { get; set; }
         public string Name { get; set; }
         public string StreetAddress1 { get; set; }

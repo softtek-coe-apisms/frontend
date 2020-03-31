@@ -8,7 +8,7 @@ namespace EcommerseClient.Models
     public class CheckoutModel
     {
         public string Message { get; set; }
-        public string OderId { get; set; }
+        public string OrderId { get; set; }
         public string ShippingTrackingId { get; set; }
         public double TotalToPay { get; set; }
     }

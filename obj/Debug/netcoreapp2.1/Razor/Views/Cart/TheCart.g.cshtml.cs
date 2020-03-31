@@ -260,7 +260,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
             WriteLiteral("                <hr />\r\n                <div class=\"row py-3 my-2\">\r\n                    <div class=\"col-12 col-lg-8 offset-lg-2\">\r\n                        <h3>Checkout</h3>\r\n                        ");
             EndContext();
             BeginContext(3841, 5889, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b1fd645d85940a5b9f0bd684a590b62", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8d98ff9e1e164bde950662cd27ddb17d", async() => {
                 BeginContext(3880, 3449, true);
                 WriteLiteral(@"
                             <div class=""form-row"">
@@ -318,7 +318,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                                         ");
                 EndContext();
                 BeginContext(7329, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "afbb3cc812f546218aad8e5f0376d6d9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b2a9df4e1ec436ebdcb551669496755", async() => {
                     BeginContext(7347, 9, true);
                     WriteLiteral(" January ");
                     EndContext();
@@ -340,7 +340,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7407, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e0a919480b044b299997f4747bd328e4", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b698906f14b94cc78bcceedacd69c593", async() => {
                     BeginContext(7425, 8, true);
                     WriteLiteral("February");
                     EndContext();
@@ -362,7 +362,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7484, 34, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fd0c74d2a5d447638ed0b83bdee14c4f", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9aa7cca2979d4b4b87be5b553a8af3c8", async() => {
                     BeginContext(7502, 7, true);
                     WriteLiteral(" March ");
                     EndContext();
@@ -384,7 +384,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7560, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "56602acd3748438f8982445ae37fbdbe", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b5fba3fb34774808b6371e3fa2f17745", async() => {
                     BeginContext(7578, 5, true);
                     WriteLiteral("April");
                     EndContext();
@@ -406,7 +406,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7634, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26a6c4dbc54e42439485a2a49c6efead", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c71a749fa3b402db89c0e24d589c4c7", async() => {
                     BeginContext(7652, 5, true);
                     WriteLiteral(" May ");
                     EndContext();
@@ -428,7 +428,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7708, 31, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c0fd407687794f26b3e32945c9345b1d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f42e0a650f174bdca07e77f4cc7dc0ef", async() => {
                     BeginContext(7726, 4, true);
                     WriteLiteral("June");
                     EndContext();
@@ -450,7 +450,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7781, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ed332adbfeb4f799e0b61eb36b6f6ed", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a72e2d6532c84646a81fe16f581fd922", async() => {
                     BeginContext(7799, 6, true);
                     WriteLiteral(" July ");
                     EndContext();
@@ -472,7 +472,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7856, 33, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5ade3d87945241dea1382748597ec449", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "413b1ea6e63e42a0ae18a26604ccf5e6", async() => {
                     BeginContext(7874, 6, true);
                     WriteLiteral("August");
                     EndContext();
@@ -494,7 +494,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(7931, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fae8cb3a885d4524840c3f4972fbfa99", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5984db610a2040e7a6d6561fdf506467", async() => {
                     BeginContext(7949, 11, true);
                     WriteLiteral(" September ");
                     EndContext();
@@ -516,7 +516,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8011, 35, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "541589e9812c4c0c9aabff80fa9e72e4", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb1807731f03415bad6b8378fcd1a333", async() => {
                     BeginContext(8030, 7, true);
                     WriteLiteral("October");
                     EndContext();
@@ -538,7 +538,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8088, 38, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a82f50f49ba74f33b40b232f1394ad67", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f52e1cdd88524f94979a9cd3dae439f7", async() => {
                     BeginContext(8107, 10, true);
                     WriteLiteral(" November ");
                     EndContext();
@@ -560,7 +560,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8168, 36, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3b73d96744494dfa885d16f1913cb0df", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "16e7b21d063548aa8816110f5fbcbc67", async() => {
                     BeginContext(8187, 8, true);
                     WriteLiteral("December");
                     EndContext();
@@ -589,7 +589,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                                         ");
                 EndContext();
                 BeginContext(8654, 23, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f8e7dbc012d64dc9a133d64950038683", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "07304f3c62a0494b874010f13fb0f71b", async() => {
                     BeginContext(8662, 6, true);
                     WriteLiteral(" 2020 ");
                     EndContext();
@@ -609,7 +609,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8719, 23, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ce6c95f3a1e948cdaf07f78f6071a857", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1a74e545fa304e76b9b81ffbfff29c5c", async() => {
                     BeginContext(8727, 6, true);
                     WriteLiteral(" 2021 ");
                     EndContext();
@@ -629,7 +629,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8784, 23, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fbb4d2e013004e95bb8f2b7efbf42c6d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "97ecdc6fdf0840ca9819e4b4068b7815", async() => {
                     BeginContext(8792, 6, true);
                     WriteLiteral(" 2022 ");
                     EndContext();
@@ -649,7 +649,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8849, 23, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02c3fd1ed2f741fea62006568f684655", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4e880307fb448fe820d3268239c56ae", async() => {
                     BeginContext(8857, 6, true);
                     WriteLiteral(" 2023 ");
                     EndContext();
@@ -669,7 +669,7 @@ WriteAttributeValue("", 1631, producto.picture, 1631, 17, false);
                 WriteLiteral("\r\n                                        ");
                 EndContext();
                 BeginContext(8914, 23, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1b9f28ce3bfb423a8d09743a019ca6bd", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "25448f7624054616ab77335c5558e21f", async() => {
                     BeginContext(8922, 6, true);
                     WriteLiteral(" 2024 ");
                     EndContext();
