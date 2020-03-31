@@ -8,3 +8,4 @@
 | ShippingService | http://localhost:5003/ |
 | CheckoutService | http://localhost:5008/ |
 | CartService | http://localhost:5000/ |
+| AdService | http://localhost:5005/ |
