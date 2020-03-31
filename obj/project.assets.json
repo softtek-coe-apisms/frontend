@@ -12797,11 +12797,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Curso\\Desktop\\EcommerseClient\\EcommerseClient.csproj",
+      "projectUniqueName": "C:\\Users\\Curso\\Desktop\\frontend\\EcommerseClient.csproj",
       "projectName": "EcommerseClient",
-      "projectPath": "C:\\Users\\Curso\\Desktop\\EcommerseClient\\EcommerseClient.csproj",
+      "projectPath": "C:\\Users\\Curso\\Desktop\\frontend\\EcommerseClient.csproj",
       "packagesPath": "C:\\Users\\Curso\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Curso\\Desktop\\EcommerseClient\\obj\\",
+      "outputPath": "C:\\Users\\Curso\\Desktop\\frontend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

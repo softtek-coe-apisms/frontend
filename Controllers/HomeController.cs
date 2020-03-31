@@ -91,16 +91,6 @@ namespace EcommerseClient.Controllers
             return PartialView(Theproduct);
         }
 
-        [HttpPost]
-        public IActionResult CheckOut(UserInfo userinfo)
-        {
-            userinfo.UserId = HttpContext.Request.Cookies["UserId"];
-            userinfo.CurrencyExchange = HttpContext.Request.Cookies["currency"];
-            CheckoutModel checkoutModel = CheckoutService.Checkout(userinfo);
-            ViewBag.currency = HttpContext.Request.Cookies["currency"];
-            return View(checkoutModel);
-        }
-
         public IActionResult Privacy()
         {
             return View();
