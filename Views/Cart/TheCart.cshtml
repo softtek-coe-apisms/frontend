@@ -1,10 +1,13 @@
 ﻿@model Cart
 @using EcommerseClient.Services
 
-<script>
-    $("#currencySelec").hide();
-</script>
-<div id="contenedor">
+@section Scripts{
+    <script type="text/javascript">
+        $("#currencySelec").hide();
+    </script>
+}
+
+<div onload="OnloadCarro()" id="contenedor">
     <div class="py-5">
         <div class="container bg-light py-3 px-lg-5 py-lg-5">
             @if (Model.items.Count == 0)
@@ -179,7 +182,7 @@
                     }
 
                     await Html.RenderPartialAsync("Recomendation", recomended);
-                <hr />
+                    <hr />
                     await Html.RenderPartialAsync("Ad");
                 }
             }

@@ -4,51 +4,24 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>EcommerseClient</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"
+          asp-fallback-href="~/lib/font-awesome/css/all.min.css"
+          asp-fallback-test-class="fab" asp-fallback-test-property="font-style" asp-fallback-test-value="normal"
+          asp-suppress-fallback-integrity="true" />
+
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        @*<link rel="stylesheet" href="~/css/site.css" />*@
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="~/css/site.css" />
     </environment>
+
     <environment exclude="Development">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
               asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     </environment>
-
-    <style>
-        .efec {
-            animation: fadeInAnimation ease 5s;
-            animation-fill-mode: forwards;
-        }
-
-        @@keyframes fadeInAnimation {
-            0% {
-                opacity: 0;
-            }
-
-            90% {
-                opacity: .8;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-    </style>
-
-</head>
-<body onload="curmenu()" class="efec">
-    @*<partial name="_CookieConsentPartial" />*@
-    <partial name="_Navbar" />
-    <div>
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2020 - EcommerseClient</p>
-        </footer>
-    </div>
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
@@ -68,103 +41,23 @@
                 crossorigin="anonymous"
                 integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd">
         </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
     </environment>
 
-    <script>
-        function oli()
-        {
-            alert('oli');
-        }
+</head>
 
-        function GoHome()
-        {
-            document.location = "Home?currency=" + $("#currencySelec").val();
-        }
+<body onload="curmenu()" class="efec">
 
-        function curmenu() {
-            $("#currencySelec").val(getCookie('currency'));
-        }
+    <partial name="_Navbar" />
+    <partial name="_CookieConsentPartial" />
 
-        function getCookie(name) {
-            var value = "; " + document.cookie;
-            var parts = value.split("; " + name + "=");
-            if (parts.length == 2) return parts.pop().split(";").shift();
-        }
-
-        partial = false;
-        idproducto = "";
-        function CoinChange() {
-            if (!partial) {
-                document.location = "Home?currency=" + $("#currencySelec").val();
-                partial = false;
-            }
-            else
-            {
-                Buy(idproducto);
-            }
-        }
-
-        function Buy(id) {
-            cur = $("#currencySelec").val();
-            $.ajax(
-                {
-                    url: '@Url.Action("BuyProducts", "Home")?id=' + id + '&currency=' + cur,
-                    type: 'GET',
-                    success: function (result)
-                    {
-                        $('#contenedor').html(result);
-                    }
-                });
-            idproducto = id;
-            partial = true;
-            $("#currencySelec").val(cur);
-        }
-
-        function Carro() {
-            cur = $("#currencySelec").val();
-            $.ajax(
-                {
-                    url: '/api/cart',
-                    type: 'POST',
-                    data:
-                    {
-                        idProduct: $("#prodId").val(),
-                        quantity: $("#quantity").val(),
-                        currency: cur
-                    },
-                    success: function ()
-                    {
-                        document.location = "Cart";
-                    }
-                });
-        }
-
-        function DeleteCart() {
-                $.ajax(
-                {
-                    url: "/api/cart/delete",
-                    type: "DELETE",
-                    success: function ()
-                    {
-                        location.reload();
-                    }
-                });
-        }
-
-        function SearchProd() {
-            $.ajax(
-               {
-                    url: "/Home/SearchByName?name=" + $('#query').val() + "&currency=" + $("#currencySelec").val(),
-                    type: 'GET',
-                    success: function (result)
-                    {
-                        $('#contenedor').html(result);
-                    }
-               });
-        }
-
-    </script>
+    <div>
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2020 - EcommerseClient</p>
+        </footer>
+    </div>
 
     @RenderSection("Scripts", required: false)
 </body>
