@@ -55,23 +55,41 @@ namespace EcommerseClient.Controllers
 
         public void GenerateCookie()
         {
+
+
             if (HttpContext.Request.Cookies["UserId"] == null)
             {
                 string info = Guid.NewGuid().ToString();
-                HttpContext.Response.Cookies.Append("UserId", info);
+                var cookieOptions = new Microsoft.AspNetCore.Http.CookieOptions()
+                {
+                    Path = "/",
+                    HttpOnly = false,
+                    IsEssential = true, //<- there
+                    Expires = DateTime.Now.AddMonths(1),
+                };
+
+                HttpContext.Response.Cookies.Append("UserId", info, cookieOptions);
             }
         }
 
         public void UpdateCurrency(string cur)
         {
+            var cookieOptions = new Microsoft.AspNetCore.Http.CookieOptions()
+            {
+                Path = "/",
+                HttpOnly = false,
+                IsEssential = true, //<- there
+                Expires = DateTime.Now.AddMonths(1),
+            };
+
             if (HttpContext.Request.Cookies["currency"] == null)
             {
-                HttpContext.Response.Cookies.Append("currency", cur);
+                HttpContext.Response.Cookies.Append("currency", cur, cookieOptions);
             }
             else
             {
                 HttpContext.Response.Cookies.Delete("currency");
-                HttpContext.Response.Cookies.Append("currency", cur);
+                HttpContext.Response.Cookies.Append("currency", cur, cookieOptions);
             }
         }
 
