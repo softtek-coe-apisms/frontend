@@ -110,3 +110,4 @@ C:\Users\Curso\Desktop\frontend\obj\Debug\netcoreapp2.1\EcommerseClient.pdb
 C:\Users\Curso\Desktop\frontend\obj\Debug\netcoreapp2.1\EcommerseClient.csproj.CopyComplete
 C:\Users\Curso\Desktop\frontend\obj\Debug\netcoreapp2.1\Razor\Views\CheckOut\CheckOut.g.cshtml.cs
 C:\Users\Curso\Desktop\frontend\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Curso\Desktop\frontend\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Found.g.cshtml.cs

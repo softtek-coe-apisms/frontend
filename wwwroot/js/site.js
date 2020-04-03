@@ -21,15 +21,31 @@ function getCookie(name) {
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
 
+pageFound = 1;
 partial = false;
 idproducto = "";
+vistapartial = 1;
 function CoinChange() {
     if (!partial) {
-        document.location = "/Home/Index?page=" + getCookie("page") + "&currency=" + $("#currencySelec").val() + '&name=' + $("#query").val();
+        if ($("#query").val() == "") {
+            document.location = "/Home/Index?page=" + getCookie("page") + "&currency=" + $("#currencySelec").val();
+        }
+        else
+        {
+            document.location = "/Home/Index?page=" + getCookie("page") + "&currency=" + $("#currencySelec").val() + '&name=' + $("#query").val();
+        }
         partial = false;
+        pageFound = 1;
     }
     else {
-        Buy(idproducto);
+        if (vistapartial == 1) {
+            SearchProd(pageFound);
+        }
+        else
+        {
+            Buy(idproducto);
+            pageFound = 1;
+        }      
     }
 }
 
@@ -45,6 +61,7 @@ function Buy(id) {
         });
     idproducto = id;
     partial = true;
+    vistapartial = 2;
     $("#currencySelec").val(cur);
 }
 
@@ -77,7 +94,7 @@ function DeleteCart() {
         });
 }
 
-function SearchProd(page) {
+function SearchProd(page, totalPages) {
     if (page == null) {
         page = 1;
     }
@@ -87,6 +104,26 @@ function SearchProd(page) {
             type: 'GET',
             success: function (result) {
                 $('#contenedor').html(result);
+                Controles(page, totalPages);
             }
         });
+    partial = true;
+    vistapartial = 1;
+    pageFound = page;
+}
+
+function Controles(page, totalPages) {
+    SetPageToActive(page)
+    if (page > 1) {
+        $("#prevv").show();
+    }
+
+    if (page == totalPages) {
+        $("#nextt").hide();
+    }
+}
+
+
+function SetPageToActive(id) {
+    $('#' + id).addClass("active");
 }

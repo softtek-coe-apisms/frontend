@@ -28,14 +28,15 @@ namespace EcommerseClient.Controllers
                 });
                 item.price = precio;
             }
+            ViewBag.page = page;
             resultadoFinal.currentCurrency = currency;
             return View(resultadoFinal);
         }
 
         [HttpGet]
-        public IActionResult SearchByName(string name, string currency, string page = "1")
+        public IActionResult SearchByName(string name, string currency, int page = 1)
         {
-            ProductCatalog Found = ProductCatalogService.Catalog(page, name);
+            ProductCatalog Found = ProductCatalogService.Catalog(page.ToString(), name);
 
             if (Found.products != null)
             {
@@ -51,7 +52,8 @@ namespace EcommerseClient.Controllers
                     item.price = precio;
                 }
                 Found.currentCurrency = currency;
-                return PartialView("Index", Found);
+                ViewBag.page = page;
+                return PartialView("_Found", Found);
             }
             else
             {

@@ -1,9 +1,9 @@
-@model ProductCatalog
+﻿@model ProductCatalog
 @using EcommerseClient.Services
 @using EcommerseClient.Models
 @using System.Web
 @using Microsoft.AspNetCore.Mvc
-<div id="contenedor">
+<div>
     <div class="album py-5 bg-light">
         <div class="container">
             @if (Model.totalProducts == 0)
@@ -31,47 +31,27 @@
                         </div>
                     }
                 </div>
+
                 <ul class="pagination">
-                    <li id="prev" class="page-item" style="display:none">
+                    <li id="prevv" class="page-item" style="display:none">
                         @{
                             int prevpage = ViewBag.page - 1;
-                            <a class="page-link" href="/Home/Index?page=@prevpage&currency=@Model.currentCurrency">Previous</a>
+                            <a class="page-link" href="#" onclick="SearchProd(@prevpage, @Model.totalPages)">Previous</a>
                         }
                     </li>
                     @for (int i = 1; i <= Model.totalPages; i++)
                     {
-                        <li id="@i" class="page-item"><a class="page-link" href="/Home/Index?page=@i&currency=@Model.currentCurrency" onclick="SetPageToActive(@i)">@i</a></li>
+                        <li id="@i" class="page-item"><a class="page-link" href="#" onclick="SearchProd(@i, @Model.totalPages);">@i</a></li>
                     }
-                    <li id="next" class="page-item">
+                    <li id="nextt" class="page-item">
                         @{
                             int nextpage = ViewBag.page + 1;
-                            <a class="page-link" href="/Home/Index?page=@nextpage&currency=@Model.currentCurrency">Next</a>
+                            <a class="page-link" href="#" onclick="SearchProd(@nextpage, @Model.totalPages)">Next</a>
                         }
                     </li>
                 </ul>
-                @section Scripts{
-                    <script type="text/javascript">
-                        SetPageToActive(@ViewBag.page)
-                        if (@ViewBag.page > 1) {
-                            $("#prev").show();
-                        }
-
-                        if (@ViewBag.page == @Model.totalPages) {
-                            $("#next").hide();
-                        }
-                    </script>
-                }
             }
             @{await Html.RenderPartialAsync("Ad");}
-        </div>
+            </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
