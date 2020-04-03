@@ -2,10 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-function oli() {
-    alert('oli');
-}
-
 function GoHome() {
     document.location = "/Home?currency=" + $("#currencySelec").val();
 }
@@ -65,7 +61,7 @@ function Carro() {
                 currency: cur
             },
             success: function () {
-                document.location = "Cart";
+                document.location = "/Cart";
             }
         });
 }
@@ -81,10 +77,13 @@ function DeleteCart() {
         });
 }
 
-function SearchProd() {
+function SearchProd(page) {
+    if (page == null) {
+        page = 1;
+    }
     $.ajax(
         {
-            url: "/Home/SearchByName?name=" + $('#query').val() + "&currency=" + $("#currencySelec").val(),
+            url: "/Home/SearchByName?name=" + $('#query').val() + "&currency=" + $("#currencySelec").val() + "&page=" + page,
             type: 'GET',
             success: function (result) {
                 $('#contenedor').html(result);

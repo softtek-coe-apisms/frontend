@@ -33,11 +33,11 @@ namespace EcommerseClient.Controllers
         }
 
         [HttpGet]
-        public IActionResult SearchByName(string name, string currency)
+        public IActionResult SearchByName(string name, string currency, string page = "1")
         {
-            ProductCatalog Found = ProductCatalogService.CatalogByName(name);
+            ProductCatalog Found = ProductCatalogService.Catalog(page, name);
 
-            if (Found != null)
+            if (Found.products != null)
             {
                 foreach (var item in Found.products)
                 {
