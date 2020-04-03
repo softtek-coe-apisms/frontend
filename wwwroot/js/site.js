@@ -7,7 +7,7 @@ function oli() {
 }
 
 function GoHome() {
-    document.location = "Home?currency=" + $("#currencySelec").val();
+    document.location = "/Home?currency=" + $("#currencySelec").val();
 }
 
 function curmenu() {
@@ -29,7 +29,7 @@ partial = false;
 idproducto = "";
 function CoinChange() {
     if (!partial) {
-        document.location = "Home?currency=" + $("#currencySelec").val();
+        document.location = "/Home/Index?page=" + getCookie("page") + "&currency=" + $("#currencySelec").val() + '&name=' + $("#query").val();
         partial = false;
     }
     else {
@@ -41,7 +41,7 @@ function Buy(id) {
     cur = $("#currencySelec").val();
     $.ajax(
         {
-            url: '/Home/BuyProducts?id=' + id + '&currency=' + cur,
+            url: '/Home/BuyProducts?id=' + id + '&currency=' + cur + '&name=' + $("#query").val(),
             type: 'GET',
             success: function (result) {
                 $('#contenedor').html(result);

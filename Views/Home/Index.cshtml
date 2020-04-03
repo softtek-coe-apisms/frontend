@@ -6,13 +6,14 @@
 <div id="contenedor">
     <div class="album py-5 bg-light">
         <div class="container">
-            @if (Model.totalItems == 0)
+            @if (Model.totalProducts == 0)
             {
                 <h2 class="text-muted">No products found</h2>
             }
             else
             {
                 <div class="row">
+                    <p id="buscador" hidden></p>
                     @foreach (var item in Model.products)
                     {
                         <div class="col-md-4 px-2 py-1 my-4">
@@ -31,6 +32,13 @@
                         </div>
                     }
                 </div>
+                <h5>Pagination</h5>
+                <ul class="pagination">
+                    @for (int i = 1; i <= Model.totalPages; i++)
+                    {
+                        <li class="page-item"><a class="page-link" href="/Home/Index?page=@i&currency=@Model.currentCurrency">@i</a></li>
+                    }
+                </ul>
             }
             @{await Html.RenderPartialAsync("Ad");}
         </div>

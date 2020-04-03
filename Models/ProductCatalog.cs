@@ -9,6 +9,7 @@ namespace EcommerseClient.Models
     {
         public string currentCurrency { get; set; }
         public List<Producto> products { get; set; }
-        public int totalItems { get; set; }
+        public int totalProducts { get; set; }
+        public int totalPages { get; set; }
     }
 }

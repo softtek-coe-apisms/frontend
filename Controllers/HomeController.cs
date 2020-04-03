@@ -11,12 +11,12 @@ namespace EcommerseClient.Controllers
 {
     public class HomeController : Controller
     {
-        public IActionResult Index(string currency = "USD")
+        public IActionResult Index(int page = 1, string currency = "USD", string name = "")
         {
             GenerateCookie();
-            ProductCatalog resultadoFinal = ProductCatalogService.Catalog();
             UpdateCurrency(currency);
-
+            UpdatePage(page.ToString());
+            ProductCatalog resultadoFinal = ProductCatalogService.Catalog(page.ToString(), name);
             foreach (var item in resultadoFinal.products)
             {
                 double precio = CurrencyService.Conversion(new CurrencyChange()
@@ -35,28 +35,32 @@ namespace EcommerseClient.Controllers
         [HttpGet]
         public IActionResult SearchByName(string name, string currency)
         {
-            var Found = ProductCatalogService.CatalogByName(name);
+            ProductCatalog Found = ProductCatalogService.CatalogByName(name);
 
-            foreach (var item in Found.products)
+            if (Found != null)
             {
-                double precio = CurrencyService.Conversion(new CurrencyChange()
+                foreach (var item in Found.products)
                 {
-                    CurrencyCode = item.priceUsd.currencyCode,
-                    Units = item.priceUsd.units,
-                    Nano = item.priceUsd.nanos,
-                    CurrencyType = currency
-                });
-                item.price = precio;
+                    double precio = CurrencyService.Conversion(new CurrencyChange()
+                    {
+                        CurrencyCode = item.priceUsd.currencyCode,
+                        Units = item.priceUsd.units,
+                        Nano = item.priceUsd.nanos,
+                        CurrencyType = currency
+                    });
+                    item.price = precio;
+                }
+                Found.currentCurrency = currency;
+                return PartialView("Index", Found);
             }
-            Found.currentCurrency = currency;
-
-            return PartialView("Index", Found);
+            else
+            {
+                return PartialView("Index", new ProductCatalog() { totalProducts = 0 });
+            }
         }
 
         public void GenerateCookie()
         {
-
-
             if (HttpContext.Request.Cookies["UserId"] == null)
             {
                 string info = Guid.NewGuid().ToString();
@@ -90,6 +94,28 @@ namespace EcommerseClient.Controllers
             {
                 HttpContext.Response.Cookies.Delete("currency");
                 HttpContext.Response.Cookies.Append("currency", cur, cookieOptions);
+            }
+        }
+
+
+        public void UpdatePage(string page)
+        {
+            var cookieOptions = new Microsoft.AspNetCore.Http.CookieOptions()
+            {
+                Path = "/",
+                HttpOnly = false,
+                IsEssential = true, //<- there
+                Expires = DateTime.Now.AddMonths(1),
+            };
+
+            if (HttpContext.Request.Cookies["page"] == "1")
+            {
+                HttpContext.Response.Cookies.Append("page", page, cookieOptions);
+            }
+            else
+            {
+                HttpContext.Response.Cookies.Delete("page");
+                HttpContext.Response.Cookies.Append("page", page, cookieOptions);
             }
         }
 

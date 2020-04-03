@@ -7,9 +7,9 @@ namespace EcommerseClient.Services
     {
         public static string BaseUrl = Environment.GetEnvironmentVariable("ProductCatalogService");
 
-        public static ProductCatalog Catalog(string page = "1")
+        public static ProductCatalog Catalog(string page = "1", string name = "")
         {
-            return new HttpRequests().TheGet<ProductCatalog>("api/ProductCatalogService?pageNumber=" + page, BaseUrl);
+            return new HttpRequests().TheGet<ProductCatalog>("api/ProductCatalogService?pageNumber=" + page + "&name=" + name, BaseUrl);
         }
 
         public static Producto Info(string id)
