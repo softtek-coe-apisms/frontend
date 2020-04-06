@@ -94,6 +94,7 @@ function DeleteCart() {
         });
 }
 
+//tot = 1;
 function SearchProd(page, totalPages) {
     if (page == null) {
         page = 1;
@@ -104,7 +105,7 @@ function SearchProd(page, totalPages) {
             type: 'GET',
             success: function (result) {
                 $('#contenedor').html(result);
-                Controles(page, totalPages);
+                Controles(page, totalPages);               
             }
         });
     partial = true;
@@ -117,9 +118,11 @@ function Controles(page, totalPages) {
     if (page > 1) {
         $("#prevv").show();
     }
-
+    console.log(totalPages)
+    console.log(page)
     if (page == totalPages) {
         $("#nextt").hide();
+        console.log(page)
     }
 }
 
