@@ -1,4 +1,4 @@
-#### frontend con docker hub repo90/frontend con variables de entorno
+#### frontend con docker hub softtekcoeapisms/frontend:1.0 con variables de entorno
 
 | Variable de entorno | BaseUrl |
 | ------ | ------ |
