@@ -4,7 +4,7 @@
     @* https://getbootstrap.com/docs/4.4/getting-started/download/ *@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EcommerseClient</title>
+    <title>Shop</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"
           asp-fallback-href="~/lib/font-awesome/css/all.min.css"
@@ -58,10 +58,15 @@
     <partial name="_Navbar" />
 
     <div>
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2020 - EcommerseClient</p>
+        @RenderBody()        
+        <footer class="container">
+            <hr />
+            <p>
+                &copy; 2020 - Shop
+            </p>
+            <p>
+                This website is hosted for demo purposes only. It is not an actual shop.
+            </p>
         </footer>
     </div>
 
