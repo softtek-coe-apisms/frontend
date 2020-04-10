@@ -53,7 +53,7 @@ function Buy(id) {
     cur = $("#currencySelec").val();
     $.ajax(
         {
-            url: '/Home/BuyProducts?id=' + id + '&currency=' + cur + '&name=' + $("#query").val(),
+            url: '/Home/BuyProducts?id=' + id + '&currency=' + cur,
             type: 'GET',
             success: function (result) {
                 $('#contenedor').html(result);

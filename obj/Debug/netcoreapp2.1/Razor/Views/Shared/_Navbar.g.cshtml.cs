@@ -83,12 +83,12 @@ using EcommerseClient.Services;
                 ");
             EndContext();
             BeginContext(885, 337, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b4dabaad22446739fa4f22c76de10da", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "83ca6ab8863545ff937be996aa43a032", async() => {
                 BeginContext(916, 160, true);
                 WriteLiteral("\r\n                    <select id=\"currencySelec\" onchange=\"CoinChange()\" class=\"custom-select custom-select-sm custom-control-inline\">\r\n                        ");
                 EndContext();
                 BeginContext(1076, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5e0ea8bc61004cecb205e63e59d7b381", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6795871e7191486e83a9a6b485eed6dc", async() => {
                     BeginContext(1096, 3, true);
                     WriteLiteral("USD");
                     EndContext();
@@ -110,7 +110,7 @@ using EcommerseClient.Services;
                 WriteLiteral("\r\n                        ");
                 EndContext();
                 BeginContext(1134, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "621267ffa9954e99b4e23729b811aad1", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e5df5d0709ac4759aaa97dce27a2ecb7", async() => {
                     BeginContext(1154, 3, true);
                     WriteLiteral("MXN");
                     EndContext();
@@ -150,7 +150,7 @@ using EcommerseClient.Services;
             WriteLiteral("\r\n\r\n                ");
             EndContext();
             BeginContext(1242, 944, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e44a47f2f93c44b2943d6a4a7ca414d2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef845246dbb342bab9bf96184a274ebd", async() => {
                 BeginContext(1309, 779, true);
                 WriteLiteral(@"
                     <div class=""input-group input-group-sm"">
