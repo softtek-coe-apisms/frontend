@@ -1,0 +1,46 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: 'softtekcoeapisms/frontend:1.0'
+          ports:
+            - containerPort: 80
+          env:
+          - name: RecomendationService
+            value: http://recomendationservice/
+          - name: CartService
+            value: http://cartservice/
+          - name: CurrencyService
+            value: http://currencyservice/
+          - name: ShippingService
+            value: http://shippingservice/
+          - name: CheckoutService
+            value: http://checkoutservice/
+          - name: AdService
+            value: http://adservice/
+          - name: ProductCatalogService
+            value: http://productcatalogservice/
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    name: frontend
+spec:
+  ports:
+    - port: 80
+      targetPort: 80
+      protocol: TCP
+  selector:
+    app: frontend
+  type: LoadBalancer
