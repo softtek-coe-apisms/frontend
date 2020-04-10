@@ -12,6 +12,7 @@ spec:
       containers:
         - name: frontend
           image: 'softtekcoeapisms/frontend:1.0'
+          imagePullPolicy: Always
           ports:
             - containerPort: 80
           env:
